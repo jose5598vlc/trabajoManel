@@ -59,7 +59,7 @@ export default class Register extends React.Component {
            secureTextEntry={true} underlineColorAndroid={'transparent'} onChangeText={(text) => this.setState({contrasenya: text})}>
             </TextInput>
 
-            <TouchableOpacity style={styles.button} onPress={this.registraUsuario}>
+            <TouchableOpacity style={styles.button} onPress={this.registraUsuario} onPress={()=>this.props.navegation.navegate("Login")}>
                 <Text style={styles.buttontext}>Registrarse</Text>
             </TouchableOpacity>
             </View>

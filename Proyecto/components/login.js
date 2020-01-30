@@ -7,6 +7,8 @@ import {
     TouchableOpacity,
     Alert,
 } from 'react-native';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavegator} from 'react-navigation-stack';
 
 
 export default class Login extends React.Component {
@@ -123,11 +125,11 @@ export default class Login extends React.Component {
            secureTextEntry={true} underlineColorAndroid={'transparent'}
            onChangeText={this.guardarContrasenya}/>
 
-            <TouchableOpacity style={styles.button} onPress={this.comprobarUsuario}>
+            <TouchableOpacity style={styles.button} onPress={this.comprobarUsuario} onPress={()=>this.props.navegation.navegate("Inicio")}>
                 <Text style={styles.buttontext}>Iniciar Sesión</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.button} onPress={this.cambioARegistro}>
+            <TouchableOpacity style={styles.button} onPress={this.cambioARegistro} onPress={()=> this.props.navegation.navegate("Register")}>
                 <Text style={styles.buttontext}>Registrarse</Text>
             </TouchableOpacity>
             </View>
