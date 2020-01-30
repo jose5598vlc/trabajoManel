@@ -5,6 +5,7 @@ import {
     View,
     TextInput,
     TouchableOpacity,
+    Alert
 } from 'react-native';
 
 
@@ -13,7 +14,7 @@ export default class Register extends React.Component {
   constructor(props){
     super(props)
     this.state={
-      id: "",
+      id: 23,
       userName: "",
       email: "",
       contrasenya: "",
@@ -22,7 +23,7 @@ export default class Register extends React.Component {
 
 
   registraUsuario() {
-        fetch('http://localhost/3001/usuarios', {
+        fetch('http://localhost:3001/usuarios', {
   method: 'POST',
   headers: {
     Accept: 'application/json',
@@ -35,13 +36,7 @@ export default class Register extends React.Component {
     contrasenya: this.contrasenya,
   }),
 })
-.then((response) => response.json())
-.then((responseJson) => {
-   alert(responseJson)
-})
-.catch((error) => {
- console.error(error)
-})
+
     }
 
 
@@ -50,7 +45,7 @@ export default class Register extends React.Component {
             <View style={styles.register}>
 
 
-                <Text style={styles.header}>Registro</Text>
+            <Text style={styles.header}>Registro</Text>
 
             <TextInput style={styles.textInput} placeholder="Nombre" 
             underlineColorAndroid={'transparent'} onChangeText={(text) => this.setState({userName: text})}>
