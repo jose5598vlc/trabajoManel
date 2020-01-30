@@ -1,84 +1,80 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
-    StyleSheet, Text, View, Image, TouchableWithoutFeedback,
-    TextInput, SafeAreaView, Keyboard, TouchableOpacity, KeyboardAvoidingView
+    StyleSheet,
+    Text,
+    View,
+    TextInput,
+    TouchableOpacity,
+    Alert
 } from 'react-native';
 
-export default class login extends Component {
+
+export default class Register extends React.Component {
+
+
     render() {
         return (
-            <View style={{ alignItems: 'center' }}>
-                <Text style={styles.title}>Datos de la cuenta</Text>
+            <View style={styles.register}>
 
-                <View style={{}}>
 
-                    <TextInput style={{}}
-                        placeholder="Introduce E-mail"
-                        placeholderTextColor='rgba(0,0,0,0.8)'
-                        keyboardType='email-address'
-                        autoCorrect={false}>
-                    </TextInput>
+             <Text style={styles.title}>Datos de la cuenta</Text>
 
-                    <TextInput style={{}}
-                        placeholder="Introduce contraseña"
-                        placeholderTextColor='rgba(0,0,0,0.8)'
-                        returnKeyType='go'
-                        secureTextEntry
-                        autoCorrect={false}>
-                    </TextInput>
+            <TextInput style={styles.textInput} placeholder="Usuario" 
+            underlineColorAndroid={'transparent'} onChangeText={(text) => this.setState({userName: text})}>
+            </TextInput>
 
-                    <TouchableOpacity style={styles.buttonContainer}>
-                        <Text style={styles.buttonText}>INICIAR SESIÓN</Text>
-                    </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.buttonContainer}>
-                        <Text style={styles.buttonText}>REGISTRARSE</Text>
-                    </TouchableOpacity>
+            <TextInput style={styles.textInput} placeholder="Contraseña" 
+           secureTextEntry={true} underlineColorAndroid={'transparent'} onChangeText={(text) => this.setState({contrasenya: text})}>
+            </TextInput>
 
-                </View>
+            <TouchableOpacity style={styles.button} onPress={this.registraUsuario}>
+                <Text style={styles.buttontext}>Iniciar Sesión</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.button} onPress={this.registraUsuario}>
+                <Text style={styles.buttontext}>Registrarse</Text>
+            </TouchableOpacity>
             </View>
-
         )
     }
 }
 
 const styles = StyleSheet.create({
+    register: {
+        alignSelf: 'stretch',
+       
+    },
 
     title: {
-        color: '#f7c744',
-        fontSize: 18,
-        textAlign: 'center',
-        marginTop: 5,
-        opacity: 0.9
+      fontSize: 28,
+      fontFamily: 'bold'
+    },
+    header: {
+        fontSize: 24,
+        color: '#fff',
+        paddingBottom: 10,
+        marginBottom: 40,
+        borderBottomColor: '#199187',
     },
 
-    infoContainer: {
-        position: 'absolute',
-        left: 0,
-        right: 0,
-        bottom: 0,
-        height: 200,
-        padding: 20,
-        /*
-        backgroundColor: 'red'
-        */
-    },
-    input: {
+    textInput: {
+        alignSelf: 'stretch',
         height: 40,
-        backgroundColor: 'rgba(255,255,255,0.2)',
-        color: '#FFF',
-        paddingHorizontal: 10,
-        marginBottom: 20
+        marginBottom: 30,
+        color: 'black',
+        borderBottomColor: '#f8f8f8',
     },
-    buttonContainer: {
-        backgroundColor: '#f7c744',
-        paddingVertical: 15
+    button: {
+        alignSelf: 'stretch',
+        alignItems: 'center',
+        padding: 20,
+        backgroundColor: '#59cbbd',
+        marginTop: 3,
     },
-    buttonText: {
-        textAlign: 'center',
-        color: 'rgb(32,53,70)',
+    buttontext: {
+        color: '#fff',
         fontWeight: 'bold',
-        fontSize: 18
+        
     }
-
 })
