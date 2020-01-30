@@ -8,5 +8,6 @@ import {name as appName} from './app.json';
 import login from './components/login';
 import register from './components/register';
 import splash from './components/splash';
+import inicio from './components/inicio';
 
 AppRegistry.registerComponent('Proyecto', () => Login);
