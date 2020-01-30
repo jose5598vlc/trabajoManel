@@ -4,7 +4,7 @@ import {StyleSheet, Text, View} from 'react-native';
 export default class splash extends Component {
     render() {
         return (
-            <View style={StyleSheet.container}>
+            <View style={styles.container}>
                 <Text style={styles.title}>Manel App</Text>
             </View>
         )
@@ -12,7 +12,7 @@ export default class splash extends Component {
 }
 
 
-const styes = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         backgroundColor: 'blue',
         flex: 1,
