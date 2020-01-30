@@ -5,11 +5,10 @@ import {
     View,
     TextInput,
     TouchableOpacity,
-    Alert
 } from 'react-native';
 
 
-export default class Register extends React.Component {
+export default class Login extends React.Component {
 
 
     render() {
