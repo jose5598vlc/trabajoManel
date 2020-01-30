@@ -1,21 +1,21 @@
 {
     "usuarios": [
       {
-        "idUsu": 1,
+        "id": 1,
         "userName": "Xavi",
         "email": "XaviCanovas@gmail.com",
         "contrasenya": "123"
         
       },
       {
-        "idUsu": 2,
+        "id": 2,
         "userName": "Jose",
         "nombre": "Jose5598vlc@gmail.com",
         "contrasenya": "123"
         
       },
       {
-        "idUsu": 3,
+        "id": 3,
         "userName": "Pepe",
         "nombre": "PepeMonleon@gmail.com",
         "contrasenya": "123"

@@ -23,14 +23,14 @@ export default class Register extends React.Component {
 
 
   registraUsuario() {
-        fetch('http://localhost:3001/usuarios', {
+        fetch('http://localhost:3001/usuarios/', {
   method: 'POST',
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
   },
   body: JSON.stringify({
-    idUsu: this.id,
+    id: '',
     userName: this.userName,
     email: this.email,
     contrasenya: this.contrasenya,

@@ -1,5 +1,3 @@
-
-
 import React, {Component} from 'react';
 import { View, Text } from "react-native";
 import Register from './components/Register';
@@ -13,7 +11,7 @@ export default class App extends Component {
     return(
       <View>
         <Text> Benvingut!!!</Text>
-        <Register></Register>
+        <Login></Login>
       </View>
     )
   }
