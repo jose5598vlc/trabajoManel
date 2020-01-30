@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-export default class Splash extends Component {
+export default class splash extends Component {
     render() {
         return (
             <View style={StyleSheet.container}>
-                <Text style={styles.title}>PlaceMyBet App</Text>
+                <Text style={styles.title}>Manel App</Text>
             </View>
         )
     }
@@ -21,7 +21,7 @@ const styes = StyleSheet.create({
     },
     title: {
         fontWeight: 'bold',
-        fontSize: 18,
+        fontSize: 28,
         color: 'white'
     }
 })
