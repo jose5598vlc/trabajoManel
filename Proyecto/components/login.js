@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, Image, TouchableWithoutFeedback,  
 TextInput, SafeAreaView, Keyboard, TouchableOpacity, KeyboardAvoidingView} from 'react-native';
 
-export default class Login extends Component {
+export default class login extends Component {
     render() {
         return (
             <SafeAreaView style={styles.container}>
@@ -10,10 +10,8 @@ export default class Login extends Component {
                     <TouchableWithoutFeedback style={styles.container} onPress={Keyboard.dismiss}>
             <View style={styles.logoContainer}>
                 <View style={styles.logoContainer}>
-                <Image style={styles.logo}>
-                source={require('../images/universitaria1.png')}
-                </Image>
-                <Text style={styles.title}>Información de la cuenta</Text>
+                
+                <Text style={styles.title}>Datos de la cuenta</Text>
                 </View>
                 <View style={styles.infoContainer}>
 
@@ -35,6 +33,11 @@ export default class Login extends Component {
                 <TouchableOpacity style={styles.buttonContainer}>
                     <Text style={styles.buttonText}>INICIAR SESIÓN</Text>
                 </TouchableOpacity>
+                 <br>
+                </br>
+                <TouchableOpacity style={styles.buttonContainer}>
+                    <Text style={styles.buttonText}>REGISTRARSE</Text>
+                </TouchableOpacity>
 
                 </View>
             </View>
@@ -55,7 +58,7 @@ const styles = StyleSheet.create({
     logoContainer: {
         alignItems: 'center',
         justifyContent: 'center',
-        flex: 1
+        flex: 0.8
     },
     logo: {
         width: 128,
