@@ -48,8 +48,10 @@ export default class Login extends React.Component {
       });
 
       this.usuarioCorrecto();
-      this.cambioAInicio();
+      
   }
+
+  
 
 
 //Cambia el estado de la variable si el array de usuarios contiene datos.
@@ -61,6 +63,8 @@ export default class Login extends React.Component {
           this.setState({usuarioCorrecto:  true});
           alert("Ej JSON está lleno");
       }
+
+      this.cambioAInicio();
       
   }
 
