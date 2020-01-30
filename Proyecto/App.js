@@ -12,7 +12,7 @@ export default class App extends Component {
     return(
       <View>
         <Text> Benvingut!!!</Text>
-        <Login></Login>
+        <Register></Register>
       </View>
     )
   }

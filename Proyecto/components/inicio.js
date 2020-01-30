@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 
 
-export default class ListadoProductos extends Component {
+export default class Inicio extends Component {
 
   constructor(props){
     super(props)
