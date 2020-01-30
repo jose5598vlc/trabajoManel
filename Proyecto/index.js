@@ -10,4 +10,4 @@ import register from './components/register';
 import splash from './components/splash';
 import inicio from './components/inicio';
 
-AppRegistry.registerComponent('Proyecto', () => Login);
+AppRegistry.registerComponent(appName, () => App);

@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 
-export default class register extends React.Component {
+export default class Register extends React.Component {
 
   constructor(props){
     super(props)
@@ -82,16 +82,14 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         marginBottom: 40,
         borderBottomColor: '#199187',
-        borderBottomWidth: 1,
     },
 
     textInput: {
         alignSelf: 'stretch',
         height: 40,
         marginBottom: 30,
-        color: '#fff',
+        color: 'black',
         borderBottomColor: '#f8f8f8',
-        borderBottonWidth: 1,
     },
     button: {
         alignSelf: 'stretch',
