@@ -3,20 +3,23 @@
       {
         "idUsu": 1,
         "userName": "Xavi",
-        "contrasenya": "123",
-        "nombre": "Xavi"
+        "email": "XaviCanovas@gmail.com",
+        "contrasenya": "123"
+        
       },
       {
         "idUsu": 2,
         "userName": "Jose",
-        "contrasenya": "123",
-        "nombre": "Jose"
+        "nombre": "Jose5598vlc@gmail.com",
+        "contrasenya": "123"
+        
       },
       {
         "idUsu": 3,
         "userName": "Pepe",
-        "contrasenya": "123",
-        "nombre": "Pepe"
+        "nombre": "PepeMonleon@gmail.com",
+        "contrasenya": "123"
+        
       }
       
     ],
