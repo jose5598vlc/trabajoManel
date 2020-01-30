@@ -1,3 +1,4 @@
+//No recoge los datos del GET, da error de NETWORK. Por lo tanto no podemos comprobar usuarios
 import React from 'react';
 import {
     StyleSheet,
@@ -48,6 +49,7 @@ export default class Login extends React.Component {
       });
 
       this.usuarioCorrecto();
+      this.cambioAInicio();
       
   }
 
@@ -64,7 +66,7 @@ export default class Login extends React.Component {
           alert("Ej JSON está lleno");
       }
 
-      this.cambioAInicio();
+      
       
   }
 

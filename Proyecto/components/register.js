@@ -1,3 +1,5 @@
+//Este componente en teoría es correcto, pero da fallos y no sabemos porque
+
 import React from 'react';
 import {
     StyleSheet,
