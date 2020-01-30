@@ -9,6 +9,42 @@ import {
 
 
 export default class register extends React.Component {
+
+  constructor(props){
+    super(props)
+    this.state={
+      id: "",
+      userName: "",
+      email: "",
+      contrasenya: "",
+    }
+  }
+
+
+  registraUsuario() {
+        fetch('http://localhost/3001/usuarios', {
+  method: 'POST',
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    idUsu: this.id,
+    userName: this.userName,
+    email: this.email,
+    contrasenya: this.contrasenya,
+  }),
+})
+.then((response) => response.json())
+.then((responseJson) => {
+   alert(responseJson)
+})
+.catch((error) => {
+ console.error(error)
+})
+    }
+
+
     render() {
         return (
             <View style={styles.register}>
@@ -17,18 +53,18 @@ export default class register extends React.Component {
                 <Text style={styles.header}>Registro</Text>
 
             <TextInput style={styles.textInput} placeholder="Nombre" 
-            underlineColorAndroid={'transparent'}>
+            underlineColorAndroid={'transparent'} onChangeText={(text) => this.setState({userName: text})}>
             </TextInput>
 
             <TextInput style={styles.textInput} placeholder="Email" 
-            underlineColorAndroid={'transparent'}>
+            underlineColorAndroid={'transparent'} onChangeText={(text) => this.setState({email: text})}>
             </TextInput>
 
-            <TextInput style={styles.textInput} placeholder="Email" 
-           secureTextEntry={true} underlineColorAndroid={'transparent'}>
+            <TextInput style={styles.textInput} placeholder="Contraseña" 
+           secureTextEntry={true} underlineColorAndroid={'transparent'} onChangeText={(text) => this.setState({contrasenya: text})}>
             </TextInput>
 
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={this.registraUsuario}>
                 <Text style={styles.buttontext}>Registrarse</Text>
             </TouchableOpacity>
             </View>
