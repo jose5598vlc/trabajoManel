@@ -1,0 +1,55 @@
+{
+    "usuarios": [
+      {
+        "idUsu": 1,
+        "userName": "Xavi",
+        "contrasenya": "123",
+        "nombre": "Xavi"
+      },
+      {
+        "idUsu": 2,
+        "userName": "Jose",
+        "contrasenya": "123",
+        "nombre": "Jose"
+      },
+      {
+        "idUsu": 3,
+        "userName": "Pepe",
+        "contrasenya": "123",
+        "nombre": "Pepe"
+      }
+      
+    ],
+    "elementos": [
+      {
+        "id":1,
+        "nombre": "Coca-Cola",
+        "descripcio": "Bebida refrescante"
+      },
+      {
+        "id":2,
+        "nombre": "Fritos",
+        "descripcion": "Snack"
+      },
+      {
+        "id":3,
+        "nombre": "Arroz",
+        "descripcion": "Alimento basico"
+      },
+      {
+        "id":4,
+        "nombre": "Fruta",
+        "descripcion": "Imprescindible en la dieta Mediterranea"
+      },
+      {
+        "id":5,
+        "nombre": "Leche",
+        "descripcion": "Puede ser Entera, Semidesnatada o Desnatada"
+      },
+      {
+        "id":6,
+        "nombre": "Pan",
+        "descripcion": "Del horno!!!"
+      }
+    ]
+  }
