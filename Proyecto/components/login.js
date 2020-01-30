@@ -28,9 +28,11 @@ export default class Login extends React.Component {
         }
 
 
+        
 
 
-      //Cambiar "UNSAFE_componentWillMount" por obtinLlistatTodos()
+
+
   //Recupera SOLO los usuarios que coincidan con las variables pasadas por parámetros   
   comprobarUsuario() {
     fetch(`http://localhost:3001/usuarios?userName=${this.state.userName}&contrasenya=${this.state.contrasenya}`) 
