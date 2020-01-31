@@ -22,7 +22,7 @@ export default class Inicio extends Component {
   //Obtener productos
   ComponentDidMount(){
     fetch("http://localhost/3001/elementos")
-    .then((reponse)=> response.json())
+    .then((response)=> response.json())
     .then((json) => {this.setState({usuarios: json})})
     .catch((error) => Console.log(error))
   }
