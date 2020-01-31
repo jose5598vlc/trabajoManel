@@ -1,8 +1,6 @@
 import React from 'react';
 import {
-    SafeAreaView,
-    ScrollView,
-    StyleSheet,
+
     Text,
     View,
     Button,
@@ -16,15 +14,15 @@ export default class Inicio extends Component {
 
   constructor(props){
     super(props)
-    this.state={usuarios: undefined}
+    this.state={elementos: undefined}
   }
 
   //Obtener productos
   ComponentDidMount(){
     fetch("http://localhost/3001/elementos")
-    .then((reponse)=> response.json())
-    .then((json) => {this.setState({usuarios: json})})
-    .catch((error) => Console.log(error))
+    .then((response)=> response.json())
+    .then((json) => {this.setState({elementos: json})})
+    .catch((error) => console.log(error))
   }
 
 render(){
@@ -33,7 +31,7 @@ render(){
       <Text> "Pantalla Inicio </Text>
 
       <FlatList
-        data={this.state.usuarios}
+        data={this.state.elementos}
         renderItem={({item}) => (
           <View style={{borderColor: "blue", borderWidth: 4, marginBottom: 10, backgroundColor: "#59cbbd", marginRight: 15, marginLeft: 15, flex:1 }}>
           <View style={{flexDirection:"colum"}}>
