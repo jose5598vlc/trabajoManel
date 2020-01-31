@@ -19,10 +19,13 @@ export default class Inicio extends Component {
 
   //Obtener productos
   ComponentDidMount(){
+
     fetch("http://localhost/3000/elementos")
     .then((response)=> response.json())
     .then((json) => {this.setState({elementos: json})})
     .catch((error) => console.log(error))
+
+
   }
 
 render(){
