@@ -7,9 +7,11 @@ import {
     TextInput,
     TouchableOpacity,
     Alert,
+    AsyncStorage,
 } from 'react-native';
-import {createAppContainer} from 'react-navigation';
-import {createStackNavegator} from 'react-navigation-stack';
+import {createAppContainer} from 'react-navigation'; // importamos createAppContainer de react navegation 
+import {createStackNavegator} from 'react-navigation-stack'; // componente para navegacion
+import * as firebase from 'firebase'; // importamos firebase de firebase 
 
 
 export default class Login extends React.Component {
@@ -17,19 +19,63 @@ export default class Login extends React.Component {
           super(props);
           this.state = {
             documentJSON: [],   //Aquí se guardan los usuarios recuperados de la bbdd
-            userName: "",   //Variable para guardar lo introducido por teclado
+            userName: "", 
+            email: "",  //Variable para guardar lo introducido por teclado
             contrasenya: "",
             usuarioCorrecto: false
           };
         //Esto es necesario para poder usar las funciones.
+        /*
           this.comprobarUsuario = this.comprobarUsuario.bind(this);
           this.usuarioCorrecto = this.usuarioCorrecto.bind(this);
           this.cambioAInicio =  this.cambioAInicio.bind(this);
+          */
+         // states de signUp y login
+         this.signUp = this.state.signUp.bind(this) 
+         this.login = this.state.login.bind(this)
         }
 
 
+        /*
+        // async donde le pasamos email y contraseña para registro, donde hacemos setState del documentJSON cuando esperamos firebase
+     async signUp() {
+      try {
+        await firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.contrasenya)
+        this.setState({
+          documentJSON: 'Usuario Registrado'
+        })
+        setStimeout(() =>{
+          this.props.navegator.push({
+            id: 'App'
+          })
+        },1500)
+      } catch(error) {
+        this.setState({
+          documentJSON: error
+        })
+      }
+     }
 
+     // async donde le pasamos los mismos parametros, hacemos setState del documento para usuario logueado
 
+     async login() {
+      try {
+        await firebase.auth().LoginUserWithEmailAndPassword(this.state.email, this.state.contrasenya)
+        this.setState({
+          documentJSON: 'Usuario Logueado'
+        })
+        setStimeout(() =>{
+          this.props.navegator.push({
+            id: 'App'
+          })
+        },1500)
+      } catch(error) {
+        this.setState({
+          documentJSON: error
+        })
+      }
+     }
+     */
       //Cambiar "UNSAFE_componentWillMount" por obtinLlistatTodos()
   //Recupera SOLO los usuarios que coincidan con las variables pasadas por parámetros   
   comprobarUsuario() {
@@ -49,9 +95,10 @@ export default class Login extends React.Component {
         console.log("Error de conexion: " + error);
         
       });
-
+/*
       this.usuarioCorrecto();
       this.cambioAInicio();
+      */
       
   }
 
@@ -74,17 +121,17 @@ export default class Login extends React.Component {
 
 
 
-
+/*
   //Método para que devuelva a la página de REGISTRO
   cambioARegistro(){
       //Lógica para cambiar de pantalla a registro
       alert("Hay que implementar el método");
   }
 
-
+*/
 
   
-
+/*
 
   cambioAInicio(){
       //Si la variable usuarioCorrecto es TRUE, cambiamos a la pantalla de INICIO
@@ -95,6 +142,7 @@ export default class Login extends React.Component {
           alert("Usuario incorrecto");
       }
   }
+  */
 
 
   guardarUsuario=(user)=>{
@@ -105,7 +153,16 @@ export default class Login extends React.Component {
     this.setState({contrasenya: pass})
 }
 
-
+// si el usuario y contraseña coinciden con el state, llamamos al metodo usuarioCorrecto y navegamos a inicio
+login = async() => {
+  if(userInfo.userName === this.state.userName && userInfo.contrasenya === this.state.contrasenya) {
+    await AsyncStorage.setItem(this.usuarioCorrecto);
+    alert('Usuario logueado');
+    this.props.navigation.navigate('Inicio');
+  } else {
+    alert('Usuario/Contraseña Incorrecto');
+  }
+}
 
 
 
@@ -120,24 +177,28 @@ export default class Login extends React.Component {
 
             <TextInput style={styles.textInput} placeholder="Usuario" 
             underlineColorAndroid={'transparent'}
-            onChangeText={this.guardarUsuario}/>
+            onChangeText={(userName) => this.setState({userName})}
+            value={this.state.userName}/>
 
         
             <TextInput style={styles.textInput} placeholder="Contraseña" 
            secureTextEntry={true} underlineColorAndroid={'transparent'}
-           onChangeText={this.guardarContrasenya}/>
+           onChangeText={(contrasenya) => this.setState({contrasenya})}
+            value={this.state.contrasenya}/>
 
-            <TouchableOpacity style={styles.button} onPress={this.comprobarUsuario} onPress={()=>this.props.navegation.navegate("Inicio")}>
+            <TouchableOpacity style={styles.button} onPress={this.login} onPress={()=>this.props.navigation.navigate("Inicio")}>
                 <Text style={styles.buttontext}>Iniciar Sesión</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.button} onPress={this.cambioARegistro} onPress={()=> this.props.navegation.navegate("Register")}>
+            <TouchableOpacity style={styles.button} onPress={this.signUp} onPress={()=> this.props.navigation.navigate("Register")}>
                 <Text style={styles.buttontext}>Registrarse</Text>
             </TouchableOpacity>
             </View>
         )
     }
 }
+
+
 
 const styles = StyleSheet.create({
     register: {

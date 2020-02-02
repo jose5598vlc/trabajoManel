@@ -41,6 +41,18 @@ export default class Register extends React.Component {
 
     }
 
+// si los parametros userName y contrasenya son iguales a los state, esperamos a asynstorage y le pasamos metodos registra usuario
+register = async() => {
+    if(userInfo.userName === this.state.userName && userInfo.contrasenya === this.state.contrasenya) {
+      await AsyncStorage.setItem(this.registraUsuario);
+      alert('Usuario Registrado'); // aqui mostramos alert de usuario registrado
+      this.props.navigation.navigate('Login'); // y llamamos a navegation para ir a login
+    } else {
+      alert('Error');
+    }
+  }
+  
+
 
     render() {
         return (

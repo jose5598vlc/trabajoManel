@@ -1,12 +1,15 @@
-import React, {Component} from 'react';
-import { View, Text } from "react-native";
+import React, {Component, useState, useEffect} from 'react';
+import { View, Text, AsyncStorage } from "react-native";
 import Register from './components/Register';
 import Login from './components/Login';
 import Splash from './components/Splash';
 import Inicio from './components/Inicio';
 import "'react-native-gesture-handler’"; 
 
+
 export default class App extends Component {
+
+  
 
   render(){
     return(
@@ -32,3 +35,4 @@ export const cambioPag = createStackNavegator({
 );
 
 const AppContainer = createAppContainer(cambioPag);
+

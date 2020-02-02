@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "771549698793",
+    "firebase_url": "https://react-login-16176.firebaseio.com",
+    "project_id": "react-login-16176",
+    "storage_bucket": "react-login-16176.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:771549698793:android:ea129ce048532145f62e78",
+        "android_client_info": {
+          "package_name": "ManelApp.Flo_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "771549698793-bs47u9o641cui7tcjhk1h7vhaffnnh62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIcpf7A_qLETjfXO3IAeXQCOQwc7R9PEo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "771549698793-bs47u9o641cui7tcjhk1h7vhaffnnh62.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

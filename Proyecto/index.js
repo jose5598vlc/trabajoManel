@@ -9,5 +9,6 @@ import login from './components/Login';
 import register from './components/Register';
 import splash from './components/Splash';
 import inicio from './components/Inicio';
+import firebase from './lib/firebase';
 
 AppRegistry.registerComponent(appName, () => App);
