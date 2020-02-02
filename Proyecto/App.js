@@ -1,6 +1,7 @@
 import React, {Component, useState, useEffect} from 'react';
 import { View, Text, AsyncStorage } from "react-native";
 import Register from './components/Register';
+
 import Login from './components/Login';
 import Splash from './components/Splash';
 import Inicio from './components/Inicio';

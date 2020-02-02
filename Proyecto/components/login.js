@@ -36,47 +36,12 @@ export default class Login extends React.Component {
         }
 
 
-        /*
-        // async donde le pasamos email y contraseña para registro, donde hacemos setState del documentJSON cuando esperamos firebase
-     async signUp() {
-      try {
-        await firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.contrasenya)
-        this.setState({
-          documentJSON: 'Usuario Registrado'
-        })
-        setStimeout(() =>{
-          this.props.navegator.push({
-            id: 'App'
-          })
-        },1500)
-      } catch(error) {
-        this.setState({
-          documentJSON: error
-        })
-      }
-     }
 
-     // async donde le pasamos los mismos parametros, hacemos setState del documento para usuario logueado
 
-     async login() {
-      try {
-        await firebase.auth().LoginUserWithEmailAndPassword(this.state.email, this.state.contrasenya)
-        this.setState({
-          documentJSON: 'Usuario Logueado'
-        })
-        setStimeout(() =>{
-          this.props.navegator.push({
-            id: 'App'
-          })
-        },1500)
-      } catch(error) {
-        this.setState({
-          documentJSON: error
-        })
-      }
-     }
-     */
-      //Cambiar "UNSAFE_componentWillMount" por obtinLlistatTodos()
+
+
+
+
   //Recupera SOLO los usuarios que coincidan con las variables pasadas por parámetros   
   comprobarUsuario() {
     fetch(`http://localhost:3001/usuarios?userName=${this.state.userName}&contrasenya=${this.state.contrasenya}`) 
